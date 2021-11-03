@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SimpleBooking.Domain.Models
+﻿namespace SimpleBooking.Domain.Models
 {
 	public class Property
 	{
@@ -10,7 +6,9 @@ namespace SimpleBooking.Domain.Models
 		public string Name { get; set; }
 		public string Description { get; set; }
 		public int LocationId { get; set; }
-		public int RatingId { get; set; }
-		public int ReviewId { get; set; }
+		public int FeedbackId { get; set; }
+
+		public Location Location { get; set; }
+		public Feedback Feedback { get; set; }
 	}
 }

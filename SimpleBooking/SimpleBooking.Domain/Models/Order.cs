@@ -5,5 +5,7 @@
 		public int Id { get; set; }
 		public int OrderStateId { get; set; }
 		public double Total { get; set; }
+
+		public OrderState OrderState { get; set; }
 	}
 }

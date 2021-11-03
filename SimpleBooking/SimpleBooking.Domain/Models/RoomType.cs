@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SimpleBooking.Domain.Models
+﻿namespace SimpleBooking.Domain.Models
 {
 	public class RoomType
 	{

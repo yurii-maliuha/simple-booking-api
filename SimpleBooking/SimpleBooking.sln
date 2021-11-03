@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBooking.API", "SimpleBooking.API\SimpleBooking.API.csproj", "{BB8FE6C5-38A9-49D1-8819-BADF7AF318A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBooking.API", "SimpleBooking.API\SimpleBooking.API.csproj", "{BB8FE6C5-38A9-49D1-8819-BADF7AF318A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBooking.Domain", "SimpleBooking.Domain\SimpleBooking.Domain.csproj", "{8D222E0F-80A0-4301-87E6-1E1E7DE57031}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBooking.Domain", "SimpleBooking.Domain\SimpleBooking.Domain.csproj", "{8D222E0F-80A0-4301-87E6-1E1E7DE57031}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBooking.Repositories", "SimpleBooking.Repositories\SimpleBooking.Repositories.csproj", "{FA4C1208-7ECA-432E-8688-8142178F88FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBooking.Services", "SimpleBooking.Services\SimpleBooking.Services.csproj", "{49CF604E-6547-463B-94F5-447F4C02C91C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBooking.Services", "SimpleBooking.Services\SimpleBooking.Services.csproj", "{49CF604E-6547-463B-94F5-447F4C02C91C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBooking.Persistent", "SimpleBooking.Persistent\SimpleBooking.Persistent.csproj", "{E8A57758-B007-4B97-B439-DECBA4D6B0C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{8D222E0F-80A0-4301-87E6-1E1E7DE57031}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D222E0F-80A0-4301-87E6-1E1E7DE57031}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D222E0F-80A0-4301-87E6-1E1E7DE57031}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA4C1208-7ECA-432E-8688-8142178F88FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA4C1208-7ECA-432E-8688-8142178F88FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA4C1208-7ECA-432E-8688-8142178F88FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA4C1208-7ECA-432E-8688-8142178F88FC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{49CF604E-6547-463B-94F5-447F4C02C91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{49CF604E-6547-463B-94F5-447F4C02C91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49CF604E-6547-463B-94F5-447F4C02C91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49CF604E-6547-463B-94F5-447F4C02C91C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8A57758-B007-4B97-B439-DECBA4D6B0C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8A57758-B007-4B97-B439-DECBA4D6B0C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8A57758-B007-4B97-B439-DECBA4D6B0C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8A57758-B007-4B97-B439-DECBA4D6B0C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
