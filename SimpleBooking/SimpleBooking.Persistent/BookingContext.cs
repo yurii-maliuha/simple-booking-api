@@ -21,23 +21,6 @@ namespace SimpleBooking.Persistent
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
-			builder.Entity<Feedback>()
-				.Property(x => x.Description)
-				.HasMaxLength(500);
-
-			builder.Entity<Property>()
-				.Property(x => x.Description)
-				.HasMaxLength(500);
-
-			builder.Entity<Location>()
-				.Property(x => x.Name)
-				.HasMaxLength(250);
-
-			builder.Entity<MealOption>()
-				.Property(x => x.Description)
-				.HasMaxLength(100)
-				.IsUnicode(false);
-
 			builder.Entity<OrderState>()
 				.Property(x => x.Status)
 				.HasMaxLength(50)
@@ -45,6 +28,7 @@ namespace SimpleBooking.Persistent
 
 			builder.Entity<OrderItem>();
 
+			builder.ApplyConfigurationsFromAssembly(typeof(BookingContext).Assembly);
 			base.OnModelCreating(builder);
 		}
 	}
