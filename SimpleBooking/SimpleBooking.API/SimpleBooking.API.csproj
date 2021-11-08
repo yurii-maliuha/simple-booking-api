@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimpleBooking.Persistent\SimpleBooking.Persistent.csproj" />
+    <ProjectReference Include="..\SimpleBooking.Services\SimpleBooking.Services.csproj" />
   </ItemGroup>
 
 

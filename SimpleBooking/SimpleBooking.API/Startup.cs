@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using SimpleBooking.Persistent;
+using SimpleBooking.Persistent.Installers;
+using SimpleBooking.Services.Installers;
 
 namespace SimpleBooking.API
 {
@@ -20,10 +22,8 @@ namespace SimpleBooking.API
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
-			services.AddDbContext<BookingContext>(c =>
-			{
-				c.UseSqlServer(_configuration.GetConnectionString("BookingDb"));
-			});
+			services.AddBookingPersistent(_configuration.GetConnectionString("BookingDb"));
+			services.AddBookingServices();
 		}
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
