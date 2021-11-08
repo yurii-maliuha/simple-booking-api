@@ -20,6 +20,12 @@ namespace SimpleBooking.API.Controllers
 		{
 			var result = await _propertyService.GetProperty(id);
 			return Ok(result);
-		}	
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> CreateProperty()
+		{
+			return Ok(null);
+		}
 	}
 }

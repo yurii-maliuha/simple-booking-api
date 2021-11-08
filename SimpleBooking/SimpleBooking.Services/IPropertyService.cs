@@ -7,5 +7,7 @@ namespace SimpleBooking.Services
 	{
 		Task<PropertyDto> GetProperty(int id);
 
+		Task<PropertyDto> CreateTestProperty();
+
 	}
 }
