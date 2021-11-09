@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SimpleBooking.Domain.Dtos;
+﻿using SimpleBooking.Domain.Dtos;
 using SimpleBooking.Domain.Models;
 using SimpleBooking.Persistent;
-using System.Linq;
+using SimpleBooking.PersistentLogs;
+using System;
 using System.Threading.Tasks;
 using System.Transactions;
 
@@ -10,27 +10,48 @@ namespace SimpleBooking.Services
 {
 	public class PropertyService : IPropertyService
 	{
-		private BookingContext _context;
-		public PropertyService(BookingContext context)
+		private readonly BookingContext _context;
+		private readonly LogsContext _logsContext;
+		public PropertyService(BookingContext context, LogsContext logsContext)
 		{
 			_context = context;
+			_logsContext = logsContext;
 		}
 
 		public Task<PropertyDto> CreateTestProperty()
 		{
-			var location = new Location()
+			using (var scope = new TransactionScope(
+				TransactionScopeOption.Required,
+				new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted }))
 			{
-				Name = "Test Location"
-			};
+				var location = new Location()
+				{
+					Name = "Test Location"
+				};
 
-			var property = new Property()
-			{
-				Description = "Test desc",
-				Name = "Test name",
-				FeedbackId = null
-			};
+				var property = new Property()
+				{
+					Description = "Test desc",
+					Name = "Test name",
+					FeedbackId = null,
+					Location = location
+				};
 
-			//using var transaction = _context.Database.BeginTransaction(IsolationLevel.Serializable);
+				_context.Properties.Add(property);
+				_context.SaveChanges();
+
+				var propertyLog = new Log()
+				{
+					Description = $"{nameof(Property)} was created with id {property.Id} and location id {location.Id}",
+					Created = DateTime.Now
+				};
+
+				_logsContext.Logs.Add(propertyLog);
+				_logsContext.SaveChanges();
+
+				scope.Complete();
+			}
+
 			return Task.FromResult(new PropertyDto());
 		}
 

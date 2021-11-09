@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using SimpleBooking.Persistent;
 using SimpleBooking.Persistent.Installers;
 using SimpleBooking.Services.Installers;
+using SimpleBooking.PersistentLogs.Installers;
 
 namespace SimpleBooking.API
 {
@@ -23,6 +24,7 @@ namespace SimpleBooking.API
 		{
 			services.AddControllers();
 			services.AddBookingPersistent(_configuration.GetConnectionString("BookingDb"));
+			services.AddPersistentLogs(_configuration.GetConnectionString("LogsDb"));
 			services.AddBookingServices();
 		}
 

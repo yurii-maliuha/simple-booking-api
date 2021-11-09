@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBooking.Domain", "Sim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBooking.Services", "SimpleBooking.Services\SimpleBooking.Services.csproj", "{49CF604E-6547-463B-94F5-447F4C02C91C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBooking.Persistent", "SimpleBooking.Persistent\SimpleBooking.Persistent.csproj", "{E8A57758-B007-4B97-B439-DECBA4D6B0C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBooking.Persistent", "SimpleBooking.Persistent\SimpleBooking.Persistent.csproj", "{E8A57758-B007-4B97-B439-DECBA4D6B0C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBooking.PersistentLogs", "SimpleBooking.PersistentLogs\SimpleBooking.PersistentLogs.csproj", "{F8819500-FFC9-448B-A10E-EF4A4989EF15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E8A57758-B007-4B97-B439-DECBA4D6B0C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8A57758-B007-4B97-B439-DECBA4D6B0C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8A57758-B007-4B97-B439-DECBA4D6B0C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8819500-FFC9-448B-A10E-EF4A4989EF15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8819500-FFC9-448B-A10E-EF4A4989EF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8819500-FFC9-448B-A10E-EF4A4989EF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8819500-FFC9-448B-A10E-EF4A4989EF15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

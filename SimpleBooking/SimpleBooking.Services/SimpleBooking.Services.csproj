@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SimpleBooking.Domain\SimpleBooking.Domain.csproj" />
+    <ProjectReference Include="..\SimpleBooking.PersistentLogs\SimpleBooking.PersistentLogs.csproj" />
     <ProjectReference Include="..\SimpleBooking.Persistent\SimpleBooking.Persistent.csproj" />
   </ItemGroup>
 

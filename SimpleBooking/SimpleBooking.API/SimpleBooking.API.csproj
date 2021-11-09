@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SimpleBooking.PersistentLogs\SimpleBooking.PersistentLogs.csproj" />
     <ProjectReference Include="..\SimpleBooking.Persistent\SimpleBooking.Persistent.csproj" />
     <ProjectReference Include="..\SimpleBooking.Services\SimpleBooking.Services.csproj" />
   </ItemGroup>
