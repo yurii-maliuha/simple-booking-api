@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SimpleBooking.Domain.Models;
 using SimpleBooking.Persistent.Constants;
+using System;
 using System.Linq;
 
 namespace SimpleBooking.Persistent.Configurations
@@ -12,6 +13,7 @@ namespace SimpleBooking.Persistent.Configurations
 		public void Configure(EntityTypeBuilder<Room> builder)
 		{
 			var initialId = 1;
+			Randomizer.Seed = new Random(8675309);
 			var roomFaker = new Faker<Room>()
 				.RuleFor(x => x.Id, f => initialId++)
 				.RuleFor(x => x.Price, f => f.PickRandom(Enumerable.Range(500, 1500)))

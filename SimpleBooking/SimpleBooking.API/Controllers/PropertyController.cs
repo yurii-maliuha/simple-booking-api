@@ -25,7 +25,8 @@ namespace SimpleBooking.API.Controllers
 		[HttpPost]
 		public async Task<IActionResult> CreateProperty()
 		{
-			var createdDto = await _propertyService.CreateTestProperty();
+			var createdDto = await _propertyService.CreateTestPropertyUsingSingleDB();
+			//var createdDto = await _propertyService.CreateTestPropertyUsingMultipleDBs();
 			return Ok(createdDto);
 		}
 	}

@@ -17,6 +17,7 @@ namespace SimpleBooking.Persistent.Configurations
 				.HasMaxLength(500);
 
 			var initialId = 1;
+			Randomizer.Seed = new Random(8675309);
 			var feedbackIds = Enumerable.Range(1, SeedDataConstants.FeedbacksCount)
 				.Select(x => new int?(x))
 				.Append(null);

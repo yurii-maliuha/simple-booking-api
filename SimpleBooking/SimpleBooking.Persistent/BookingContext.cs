@@ -18,6 +18,7 @@ namespace SimpleBooking.Persistent
 
 		public DbSet<Order> Orders{ get; set; }
 		public DbSet<Property> Properties { get; set; }
+		public DbSet<Log> Logs { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{

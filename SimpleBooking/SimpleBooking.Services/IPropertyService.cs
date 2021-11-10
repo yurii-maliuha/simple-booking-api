@@ -7,7 +7,8 @@ namespace SimpleBooking.Services
 	{
 		Task<PropertyDto> GetProperty(int id);
 
-		Task<PropertyDto> CreateTestProperty();
+		Task<PropertyDto> CreateTestPropertyUsingMultipleDBs();
 
+		Task<PropertyDto> CreateTestPropertyUsingSingleDB();
 	}
 }

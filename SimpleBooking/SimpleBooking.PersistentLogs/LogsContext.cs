@@ -4,6 +4,11 @@ namespace SimpleBooking.PersistentLogs
 {
 	public class LogsContext : DbContext
 	{
+		public LogsContext()
+		{
+
+		}
+
 		public LogsContext(DbContextOptions<LogsContext> options)
 			: base(options)
 		{

@@ -15,6 +15,7 @@ namespace SimpleBooking.Persistent.Configurations
 				.HasMaxLength(500);
 
 			var initialId = 1;
+			Randomizer.Seed = new Random(8675309);
 			var feedbackFaker = new Faker<Feedback>()
 				.RuleFor(x => x.Id, f => initialId++)
 				.RuleFor(x => x.StarsCount, f => f.PickRandom<int>(1, 2, 3, 4, 5))
