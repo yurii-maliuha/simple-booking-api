@@ -13,6 +13,7 @@ namespace SimpleBooking.Persistent.Configurations
 		{
 			builder.Property(x => x.Description)
 				.HasMaxLength(500);
+			builder.ToTable("Feedback");
 
 			var initialId = 1;
 			var feedbackFaker = new Faker<Feedback>()

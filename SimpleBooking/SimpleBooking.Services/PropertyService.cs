@@ -1,4 +1,5 @@
-﻿using SimpleBooking.Domain.Dtos;
+﻿using Microsoft.EntityFrameworkCore;
+using SimpleBooking.Domain.Dtos;
 using SimpleBooking.Persistent;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,8 +16,19 @@ namespace SimpleBooking.Services
 
 		public Task<PropertyDto> GetProperty(int id)
 		{
-			var property1 = _context.Properties.Find(id);
-			var property2 = _context.Properties.Find(id);
+			var property1 = _context.Rooms
+				.Include(x => x.Property)
+				.ThenInclude(x => x.Feedback)
+				.Include(x => x.RoomType)
+				.Where(x => x.PropertyId >= id)
+				//.Take(100)
+				.ToList();
+
+			var feedback = _context.Feedbacks
+				.ToList();
+			
+
+
 
 			return Task.FromResult(new PropertyDto());
 		}

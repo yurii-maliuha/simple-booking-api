@@ -7,9 +7,15 @@ namespace SimpleBooking.Persistent.Installers
 	{
 		public static IServiceCollection AddBookingPersistent(this IServiceCollection services, string connectionStr)
 		{
-			services.AddDbContext<BookingContext>(c => {
+			//services.AddTransient((c) => new BookingContext(connectionStr));
+			//services.AddScoped((c) => new BookingContext(connectionStr));
+			//services.AddSingleton((c) => new BookingContext(connectionStr));
+
+			services.AddDbContext<BookingContext>(c =>
+			{
 				c.UseSqlServer(connectionStr);
-			});
+
+			}, ServiceLifetime.Singleton);
 
 			return services;
 		}

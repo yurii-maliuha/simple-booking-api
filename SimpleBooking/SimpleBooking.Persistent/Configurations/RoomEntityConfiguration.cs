@@ -11,6 +11,8 @@ namespace SimpleBooking.Persistent.Configurations
 	{
 		public void Configure(EntityTypeBuilder<Room> builder)
 		{
+			builder.ToTable("Room");
+
 			var initialId = 1;
 			var roomFaker = new Faker<Room>()
 				.RuleFor(x => x.Id, f => initialId++)
