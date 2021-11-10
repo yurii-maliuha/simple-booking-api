@@ -16,6 +16,7 @@ namespace SimpleBooking.Persistent.Configurations
 			builder.ToTable("Feedback");
 
 			var initialId = 1;
+			Randomizer.Seed = SeedDataConstants.SeedRandom;
 			var feedbackFaker = new Faker<Feedback>()
 				.RuleFor(x => x.Id, f => initialId++)
 				.RuleFor(x => x.StarsCount, f => f.PickRandom<int>(1, 2, 3, 4, 5))

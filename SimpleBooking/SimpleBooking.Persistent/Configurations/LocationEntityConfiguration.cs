@@ -16,6 +16,7 @@ namespace SimpleBooking.Persistent.Configurations
 				.HasMaxLength(250);
 
 			var initialId = 1;
+			Randomizer.Seed = SeedDataConstants.SeedRandom;
 			var locationFaker = new Faker<Location>()
 				.RuleFor(x => x.Id, f => initialId++)
 				.RuleFor(x => x.Name, f => f.Country().UnitedStates().State().Name);

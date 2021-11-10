@@ -6,9 +6,11 @@ namespace SimpleBooking.Persistent.Constants
 {
 	public static class SeedDataConstants
 	{
-		public static int FeedbacksCount = 100;
+		public static int FeedbacksCount = 5000;
 		public static int LocationsCount = 15;
-		public static int PropertiesCount = 500;
-		public static int RoomsCount = 2000;
+		public static int PropertiesCount = 1000;
+		public static int RoomsCount = 5000;
+
+		public static Random SeedRandom = new Random(1);
 	}
 }
