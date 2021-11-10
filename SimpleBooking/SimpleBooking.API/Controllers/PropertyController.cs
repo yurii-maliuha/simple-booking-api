@@ -20,6 +20,22 @@ namespace SimpleBooking.API.Controllers
 		{
 			var result = await _propertyService.GetProperty(id);
 			return Ok(result);
-		}	
+		}
+
+		[HttpGet]
+		[Route("room/{id:int}")]
+		public async Task<IActionResult> GetRoom(int id)
+		{
+			var result = await _propertyService.GetRoom(id);
+			return Ok(result);
+		}
+
+		[HttpGet]
+		[Route("feedback/{id:int}")]
+		public async Task<IActionResult> GetFeedback(int id)
+		{
+			var result = await _propertyService.GetFeedbacks(id);
+			return Ok(result);
+		}
 	}
 }

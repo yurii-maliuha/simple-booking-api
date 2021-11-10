@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SimpleBooking.Domain.Dtos;
+using SimpleBooking.Domain.Models;
 using SimpleBooking.Persistent;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,23 +15,33 @@ namespace SimpleBooking.Services
 			_context = context;
 		}
 
-		public Task<PropertyDto> GetProperty(int id)
+		public Task<Property> GetProperty(int id)
+		{
+			var property1 = _context.Properties
+				.Where(x => x.Id > id)
+				.ToList();
+
+			return Task.FromResult(property1.First());
+		}
+
+		public Task<Feedback> GetFeedbacks(int id)
+		{
+			var property1 = _context.Feedbacks
+				.Where(x => x.Id > id)
+				.ToList();
+
+
+			return Task.FromResult(property1.First());
+		}
+
+		public Task<Room> GetRoom(int id)
 		{
 			var property1 = _context.Rooms
-				.Include(x => x.Property)
-				.ThenInclude(x => x.Feedback)
-				.Include(x => x.RoomType)
-				.Where(x => x.PropertyId >= id)
-				//.Take(100)
+				.Where(x => x.Id > id)
 				.ToList();
 
-			var feedback = _context.Feedbacks
-				.ToList();
-			
 
-
-
-			return Task.FromResult(new PropertyDto());
+			return Task.FromResult(property1.First());
 		}
 	}
 }

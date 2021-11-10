@@ -1,11 +1,17 @@
-﻿using SimpleBooking.Domain.Dtos;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using SimpleBooking.Domain.Dtos;
+using SimpleBooking.Domain.Models;
 using System.Threading.Tasks;
+using Property = SimpleBooking.Domain.Models.Property;
 
 namespace SimpleBooking.Services
 {
 	public interface IPropertyService
 	{
-		Task<PropertyDto> GetProperty(int id);
+		Task<Property> GetProperty(int id);
+		Task<Feedback> GetFeedbacks(int id);
+
+		Task<Room> GetRoom(int id);
 
 	}
 }

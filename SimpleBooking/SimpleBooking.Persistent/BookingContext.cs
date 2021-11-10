@@ -23,10 +23,6 @@ namespace SimpleBooking.Persistent
 		public DbSet<Room> Rooms { get; set; }
 		public DbSet<Feedback> Feedbacks { get; set; }
 
-		//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		//{
-		//	optionsBuilder.UseSqlServer(_connectionStr);
-		//}
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
