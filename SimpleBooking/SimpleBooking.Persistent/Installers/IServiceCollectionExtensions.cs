@@ -11,7 +11,7 @@ namespace SimpleBooking.Persistent.Installers
 			{
 				c.UseSqlServer(connectionStr);
 
-			}, ServiceLifetime.Singleton);
+			}, ServiceLifetime.Scoped);
 
 			return services;
 		}

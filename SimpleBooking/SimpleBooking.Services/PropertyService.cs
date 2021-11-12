@@ -23,25 +23,5 @@ namespace SimpleBooking.Services
 
 			return Task.FromResult(property1.First());
 		}
-
-		public Task<Feedback> GetFeedbacks(int id)
-		{
-			var property1 = _context.Feedbacks
-				.Where(x => x.Id > id)
-				.ToList();
-
-
-			return Task.FromResult(property1.First());
-		}
-
-		public Task<Room> GetRoom(int id)
-		{
-			var property1 = _context.Rooms
-				.Where(x => x.Id > id)
-				.ToList();
-
-
-			return Task.FromResult(property1.First());
-		}
 	}
 }

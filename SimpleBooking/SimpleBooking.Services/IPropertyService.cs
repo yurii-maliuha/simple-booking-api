@@ -9,9 +9,6 @@ namespace SimpleBooking.Services
 	public interface IPropertyService
 	{
 		Task<Property> GetProperty(int id);
-		Task<Feedback> GetFeedbacks(int id);
-
-		Task<Room> GetRoom(int id);
 
 	}
 }

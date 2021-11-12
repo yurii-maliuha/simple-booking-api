@@ -9,11 +9,22 @@ namespace SimpleBooking.API.Controllers
 	public class PropertyController : ControllerBase
 	{
 		private readonly IPropertyService _propertyService;
-		public PropertyController(IPropertyService propertyService)
+		private readonly IRoomService _roomService;
+		private readonly IFeedbackService _feedbackService;
+		private readonly IBookingService _bookingService;
+		public PropertyController(
+			IPropertyService propertyService,
+			IRoomService roomService,
+			IFeedbackService feedbackService,
+			IBookingService bookingService)
 		{
 			_propertyService = propertyService;
+			_roomService = roomService;
+			_feedbackService = feedbackService;
+			_bookingService = bookingService;
 		}
 
+		// Call three below for testing Singelton case
 		[HttpGet]
 		[Route("{id:int}")]
 		public async Task<IActionResult> GetProperty(int id)
@@ -26,7 +37,7 @@ namespace SimpleBooking.API.Controllers
 		[Route("room/{id:int}")]
 		public async Task<IActionResult> GetRoom(int id)
 		{
-			var result = await _propertyService.GetRoom(id);
+			var result = await _roomService.GetRoom(id);
 			return Ok(result);
 		}
 
@@ -34,7 +45,16 @@ namespace SimpleBooking.API.Controllers
 		[Route("feedback/{id:int}")]
 		public async Task<IActionResult> GetFeedback(int id)
 		{
-			var result = await _propertyService.GetFeedbacks(id);
+			var result = await _feedbackService.GetFeedbacks(id);
+			return Ok(result);
+		}
+
+		// Call it for testing Transient case
+		[HttpGet]
+		[Route("best-order")]
+		public async Task<IActionResult> GetBestOrder()
+		{
+			var result = await _bookingService.FindBestOrder();
 			return Ok(result);
 		}
 	}
